@@ -1,0 +1,24 @@
+//
+//  PrefixHeader.pch
+//  fxDemo
+//
+//  Created by 樊星 on 2019/4/15.
+//  Copyright © 2019 樊星. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//宏定义
+#import "Macro.h"
+
+//工具库
+#import "FXUtils.h"
+#import "UIView+onClick.h"
+#import <objc/runtime.h>
+#import "math.h"
+#import <ReactiveObjC-umbrella.h>
+#import "UIView+Frame.h"
+//#import "CC_Share.h"
+
+#endif /* PrefixHeader_pch */
