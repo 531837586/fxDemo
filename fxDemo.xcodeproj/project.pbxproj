@@ -3,25 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24DC8B54C91F984217E89372 /* Pods_fxDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 363F812D33E2057B323DCDDC /* Pods_fxDemo.framework */; };
 		A11D198522B779F000DD171F /* MVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A11D198422B779F000DD171F /* MVVMViewController.m */; };
-		A12DC7312291A935007C5618 /* WanCmsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7302291A935007C5618 /* WanCmsSDK.framework */; };
-		A12DC7332291A9B7007C5618 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7322291A9B7007C5618 /* AlipaySDK.framework */; };
 		A12DC7352291A9DF007C5618 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A12DC7342291A9DF007C5618 /* AlipaySDK.bundle */; };
-		A12DC7372291AA34007C5618 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7362291AA34007C5618 /* AdSupport.framework */; };
-		A12DC7392291AA3D007C5618 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7382291AA3D007C5618 /* CFNetwork.framework */; };
-		A12DC73B2291AA45007C5618 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC73A2291AA45007C5618 /* SystemConfiguration.framework */; };
-		A12DC73D2291AA53007C5618 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC73C2291AA53007C5618 /* CoreMotion.framework */; };
-		A12DC73F2291AA5E007C5618 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC73E2291AA5E007C5618 /* CoreTelephony.framework */; };
-		A12DC7412291AA69007C5618 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7402291AA69007C5618 /* CoreText.framework */; };
-		A12DC7432291AA85007C5618 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7422291AA85007C5618 /* libc++.tbd */; };
-		A12DC7452291AAC2007C5618 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7442291AAC2007C5618 /* libcrypto.a */; };
-		A12DC7472291AACC007C5618 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7462291AACC007C5618 /* libssl.a */; };
-		A12DC7492291AADD007C5618 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A12DC7482291AADC007C5618 /* libz.tbd */; };
 		A130BF0622B99C2A00D53046 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A130BF0522B99C2A00D53046 /* RACViewController.m */; };
 		A130BF0A22B9CF0500D53046 /* RACLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A130BF0822B9CF0500D53046 /* RACLoginViewController.m */; };
 		A130BF0B22B9CF0500D53046 /* RACLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A130BF0922B9CF0500D53046 /* RACLoginViewController.xib */; };
@@ -47,12 +34,22 @@
 		A1674D8523A075150040FD11 /* KVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674D8423A075150040FD11 /* KVCViewController.m */; };
 		A1674D8923A089E60040FD11 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674D8823A089E60040FD11 /* Person.m */; };
 		A1674D8C23A355E30040FD11 /* NSObject+FXKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674D8B23A355E30040FD11 /* NSObject+FXKVC.m */; };
+		A1674D9123A6276B0040FD11 /* FXPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674D9023A6276B0040FD11 /* FXPerson.m */; };
+		A1674D9423A627990040FD11 /* FXPerson+something.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674D9323A627990040FD11 /* FXPerson+something.m */; };
+		A1674D9723A6285B0040FD11 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674D9623A6285B0040FD11 /* CategoryVC.m */; };
+		A1674DA323A9B8ED0040FD11 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674DA223A9B8ED0040FD11 /* KVOViewController.m */; };
+		A1674DA623A9B90F0040FD11 /* KVOPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674DA523A9B90F0040FD11 /* KVOPerson.m */; };
+		A1674DA923A9CBA10040FD11 /* KVOStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674DA823A9CBA10040FD11 /* KVOStudent.m */; };
+		A1674DAC23ADC2470040FD11 /* NSObject+FXKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = A1674DAB23ADC2470040FD11 /* NSObject+FXKVO.m */; };
 		A1692556229BC86D00B88365 /* StackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1692555229BC86D00B88365 /* StackViewController.m */; };
 		A16BF15D22F14A2C000BF496 /* DisfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A16BF15C22F14A2C000BF496 /* DisfileViewController.m */; };
 		A17FC1F92317E2B800502116 /* DictionaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A17FC1F82317E2B800502116 /* DictionaryVC.m */; };
 		A18EEC2A22C09E20008D6483 /* AESEncrypViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EEC2922C09E20008D6483 /* AESEncrypViewController.m */; };
 		A18EEC2D22C09E77008D6483 /* NSString+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EEC2C22C09E77008D6483 /* NSString+AES.m */; };
 		A18EEC3122C09F98008D6483 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = A18EEC3022C09F98008D6483 /* GTMBase64.m */; };
+		A191970423B4DB82009B7CFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191970323B4DB82009B7CFA /* UIKit.framework */; };
+		A191970623B4DB8B009B7CFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191970523B4DB8B009B7CFA /* Foundation.framework */; };
+		A191970923B5999E009B7CFA /* FXKVOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A191970823B5999E009B7CFA /* FXKVOInfo.m */; };
 		A199E216229FE8B100BB7B81 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E215229FE8B100BB7B81 /* ImageViewController.m */; };
 		A199E21E22A10EEB00BB7B81 /* UIView+onClick.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E21C22A10EEB00BB7B81 /* UIView+onClick.m */; };
 		A199E22222A1156200BB7B81 /* LogView.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E22122A1156200BB7B81 /* LogView.m */; };
@@ -149,12 +146,29 @@
 		A13E52A12265DC2500936CE0 /* UIViewController+FXUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FXUI.m"; sourceTree = "<group>"; };
 		A147876A225F408800ECB147 /* UINavigationController+EventNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+EventNavController.m"; sourceTree = "<group>"; };
 		A147876B225F408800ECB147 /* UINavigationController+EventNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+EventNavController.h"; sourceTree = "<group>"; };
+		A14905B823B301B9004F255C /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
+		A14905BA23B301D1004F255C /* libcryptex.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcryptex.tbd; path = usr/lib/libcryptex.tbd; sourceTree = SDKROOT; };
+		A14905BC23B3023A004F255C /* libboringssl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libboringssl.tbd; path = usr/lib/libboringssl.tbd; sourceTree = SDKROOT; };
 		A1674D8323A075150040FD11 /* KVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCViewController.h; sourceTree = "<group>"; };
 		A1674D8423A075150040FD11 /* KVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCViewController.m; sourceTree = "<group>"; };
 		A1674D8723A089E60040FD11 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		A1674D8823A089E60040FD11 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		A1674D8A23A355E30040FD11 /* NSObject+FXKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FXKVC.h"; sourceTree = "<group>"; };
 		A1674D8B23A355E30040FD11 /* NSObject+FXKVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FXKVC.m"; sourceTree = "<group>"; };
+		A1674D8F23A6276B0040FD11 /* FXPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXPerson.h; sourceTree = "<group>"; };
+		A1674D9023A6276B0040FD11 /* FXPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXPerson.m; sourceTree = "<group>"; };
+		A1674D9223A627990040FD11 /* FXPerson+something.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FXPerson+something.h"; sourceTree = "<group>"; };
+		A1674D9323A627990040FD11 /* FXPerson+something.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FXPerson+something.m"; sourceTree = "<group>"; };
+		A1674D9523A6285B0040FD11 /* CategoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
+		A1674D9623A6285B0040FD11 /* CategoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
+		A1674DA123A9B8ED0040FD11 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
+		A1674DA223A9B8ED0040FD11 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
+		A1674DA423A9B90F0040FD11 /* KVOPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOPerson.h; sourceTree = "<group>"; };
+		A1674DA523A9B90F0040FD11 /* KVOPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOPerson.m; sourceTree = "<group>"; };
+		A1674DA723A9CBA10040FD11 /* KVOStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOStudent.h; sourceTree = "<group>"; };
+		A1674DA823A9CBA10040FD11 /* KVOStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOStudent.m; sourceTree = "<group>"; };
+		A1674DAA23ADC2470040FD11 /* NSObject+FXKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FXKVO.h"; sourceTree = "<group>"; };
+		A1674DAB23ADC2470040FD11 /* NSObject+FXKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FXKVO.m"; sourceTree = "<group>"; };
 		A1692554229BC86D00B88365 /* StackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackViewController.h; sourceTree = "<group>"; };
 		A1692555229BC86D00B88365 /* StackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackViewController.m; sourceTree = "<group>"; };
 		A16BF15B22F14A2C000BF496 /* DisfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisfileViewController.h; sourceTree = "<group>"; };
@@ -168,6 +182,10 @@
 		A18EEC2E22C09F98008D6483 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		A18EEC2F22C09F98008D6483 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		A18EEC3022C09F98008D6483 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		A191970323B4DB82009B7CFA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A191970523B4DB8B009B7CFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A191970723B5999E009B7CFA /* FXKVOInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXKVOInfo.h; sourceTree = "<group>"; };
+		A191970823B5999E009B7CFA /* FXKVOInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXKVOInfo.m; sourceTree = "<group>"; };
 		A199E214229FE8B100BB7B81 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		A199E215229FE8B100BB7B81 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		A199E21C22A10EEB00BB7B81 /* UIView+onClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+onClick.m"; sourceTree = "<group>"; };
@@ -194,19 +212,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A12DC7492291AADD007C5618 /* libz.tbd in Frameworks */,
-				A12DC7432291AA85007C5618 /* libc++.tbd in Frameworks */,
-				A12DC7412291AA69007C5618 /* CoreText.framework in Frameworks */,
-				A12DC73F2291AA5E007C5618 /* CoreTelephony.framework in Frameworks */,
-				A12DC73D2291AA53007C5618 /* CoreMotion.framework in Frameworks */,
-				A12DC73B2291AA45007C5618 /* SystemConfiguration.framework in Frameworks */,
-				A12DC7392291AA3D007C5618 /* CFNetwork.framework in Frameworks */,
-				A12DC7452291AAC2007C5618 /* libcrypto.a in Frameworks */,
-				A12DC7372291AA34007C5618 /* AdSupport.framework in Frameworks */,
-				A12DC7472291AACC007C5618 /* libssl.a in Frameworks */,
-				A12DC7312291A935007C5618 /* WanCmsSDK.framework in Frameworks */,
-				A12DC7332291A9B7007C5618 /* AlipaySDK.framework in Frameworks */,
-				24DC8B54C91F984217E89372 /* Pods_fxDemo.framework in Frameworks */,
+				A191970423B4DB82009B7CFA /* UIKit.framework in Frameworks */,
+				A191970623B4DB8B009B7CFA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +365,9 @@
 		A13E51EF2264577A00936CE0 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A1674DA023A9B8C70040FD11 /* KVO */,
+				A1674D8E23A627400040FD11 /* Category(分类) */,
+				A1674D8D23A5CEFA0040FD11 /* YYModel */,
 				A1674D8623A089460040FD11 /* KVC */,
 				A13E51F0226457C500936CE0 /* FXShadowVC.h */,
 				A13E51F1226457C500936CE0 /* FXShadowVC.m */,
@@ -383,6 +393,8 @@
 				A19B9CC5235E960A005FDEE6 /* GetChannelVC.m */,
 				A19FC54C2394A8B10023CFF7 /* GCDViewController.h */,
 				A19FC54D2394A8B10023CFF7 /* GCDViewController.m */,
+				A1674D9523A6285B0040FD11 /* CategoryVC.h */,
+				A1674D9623A6285B0040FD11 /* CategoryVC.m */,
 				A11D198622B779FD00DD171F /* MVVM */,
 			);
 			path = Demo;
@@ -438,6 +450,41 @@
 			path = KVC;
 			sourceTree = "<group>";
 		};
+		A1674D8D23A5CEFA0040FD11 /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YYModel;
+			sourceTree = "<group>";
+		};
+		A1674D8E23A627400040FD11 /* Category(分类) */ = {
+			isa = PBXGroup;
+			children = (
+				A1674D8F23A6276B0040FD11 /* FXPerson.h */,
+				A1674D9023A6276B0040FD11 /* FXPerson.m */,
+				A1674D9223A627990040FD11 /* FXPerson+something.h */,
+				A1674D9323A627990040FD11 /* FXPerson+something.m */,
+			);
+			path = "Category(分类)";
+			sourceTree = "<group>";
+		};
+		A1674DA023A9B8C70040FD11 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				A1674DA123A9B8ED0040FD11 /* KVOViewController.h */,
+				A1674DA223A9B8ED0040FD11 /* KVOViewController.m */,
+				A1674DA723A9CBA10040FD11 /* KVOStudent.h */,
+				A1674DA823A9CBA10040FD11 /* KVOStudent.m */,
+				A1674DA423A9B90F0040FD11 /* KVOPerson.h */,
+				A1674DA523A9B90F0040FD11 /* KVOPerson.m */,
+				A1674DAA23ADC2470040FD11 /* NSObject+FXKVO.h */,
+				A1674DAB23ADC2470040FD11 /* NSObject+FXKVO.m */,
+				A191970723B5999E009B7CFA /* FXKVOInfo.h */,
+				A191970823B5999E009B7CFA /* FXKVOInfo.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 		A199E21F22A1151A00BB7B81 /* NSLogView */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +505,11 @@
 		E4B016ADB736562008A606CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A191970523B4DB8B009B7CFA /* Foundation.framework */,
+				A191970323B4DB82009B7CFA /* UIKit.framework */,
+				A14905BC23B3023A004F255C /* libboringssl.tbd */,
+				A14905BA23B301D1004F255C /* libcryptex.tbd */,
+				A14905B823B301B9004F255C /* CryptoTokenKit.framework */,
 				A12DC7482291AADC007C5618 /* libz.tbd */,
 				A12DC7422291AA85007C5618 /* libc++.tbd */,
 				A12DC7402291AA69007C5618 /* CoreText.framework */,
@@ -484,7 +536,6 @@
 				A1391945222F5EF0003955AC /* Sources */,
 				A1391946222F5EF0003955AC /* Frameworks */,
 				A1391947222F5EF0003955AC /* Resources */,
-				0734C6B41E29A9AD756527FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -603,23 +654,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0734C6B41E29A9AD756527FB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fxDemo/Pods-fxDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fxDemo/Pods-fxDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fxDemo/Pods-fxDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		52512F1830E7E9A759B1CDEE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -649,9 +683,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1674DA623A9B90F0040FD11 /* KVOPerson.m in Sources */,
 				A11D198522B779F000DD171F /* MVVMViewController.m in Sources */,
 				A13DA3122322510C00202AE7 /* UIView+Frame.m in Sources */,
 				A1674D8923A089E60040FD11 /* Person.m in Sources */,
+				A1674DA923A9CBA10040FD11 /* KVOStudent.m in Sources */,
 				A130BF0A22B9CF0500D53046 /* RACLoginViewController.m in Sources */,
 				A199E216229FE8B100BB7B81 /* ImageViewController.m in Sources */,
 				A1391951222F5EF0003955AC /* MenuViewController.m in Sources */,
@@ -659,9 +695,12 @@
 				A13E52A22265DC2500936CE0 /* UIViewController+FXUI.m in Sources */,
 				A1674D8C23A355E30040FD11 /* NSObject+FXKVC.m in Sources */,
 				A19FC54E2394A8B10023CFF7 /* GCDViewController.m in Sources */,
+				A1674D9123A6276B0040FD11 /* FXPerson.m in Sources */,
 				A13E529E2265C1F500936CE0 /* UICallerViewController.m in Sources */,
 				A1674D8523A075150040FD11 /* KVCViewController.m in Sources */,
 				A199E22822A11C0900BB7B81 /* QueueViewController.m in Sources */,
+				A191970923B5999E009B7CFA /* FXKVOInfo.m in Sources */,
+				A1674DAC23ADC2470040FD11 /* NSObject+FXKVO.m in Sources */,
 				A1E9603C223251C30044DA6F /* FXReadLocalFile.m in Sources */,
 				A13E51ED226455B500936CE0 /* RootNavigationController.m in Sources */,
 				A199E21E22A10EEB00BB7B81 /* UIView+onClick.m in Sources */,
@@ -670,12 +709,14 @@
 				A13E51F2226457C500936CE0 /* FXShadowVC.m in Sources */,
 				A139195C222F5EF1003955AC /* main.m in Sources */,
 				A13DA30F23224E7A00202AE7 /* KKGameSDKTopMoveImage.m in Sources */,
+				A1674D9723A6285B0040FD11 /* CategoryVC.m in Sources */,
 				A13DA3092322412E00202AE7 /* AnimationImageVC.m in Sources */,
 				A130BF0E22BA29A300D53046 /* LoginVM.m in Sources */,
 				A17FC1F92317E2B800502116 /* DictionaryVC.m in Sources */,
 				A199E22222A1156200BB7B81 /* LogView.m in Sources */,
 				A13E51FB22645DF400936CE0 /* FXUtils.m in Sources */,
 				A1692556229BC86D00B88365 /* StackViewController.m in Sources */,
+				A1674DA323A9B8ED0040FD11 /* KVOViewController.m in Sources */,
 				A13E51EA2264555200936CE0 /* BaseNavigationController.m in Sources */,
 				A147876C225F408800ECB147 /* UINavigationController+EventNavController.m in Sources */,
 				A199E22522A1157F00BB7B81 /* BaseView.m in Sources */,
@@ -685,6 +726,7 @@
 				A16BF15D22F14A2C000BF496 /* DisfileViewController.m in Sources */,
 				A139194E222F5EF0003955AC /* AppDelegate.m in Sources */,
 				A13E51E4226078C500936CE0 /* KKEventPointMgr.m in Sources */,
+				A1674D9423A627990040FD11 /* FXPerson+something.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -837,6 +879,7 @@
 			baseConfigurationReference = 39AAB028245BE7AAA82DCB9D /* Pods-fxDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S4LAW85QU6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -852,34 +895,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/fxDemo/Framework/PaySDK",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"icucore\"",
-					"-l\"sqlite3\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"JavaScriptCore\"",
-					"-framework",
-					"\"ReactiveObjC\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"WebKit\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = mingling.fxDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -891,6 +908,7 @@
 			baseConfigurationReference = 1D23C45A6D2CF2E276857F46 /* Pods-fxDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S4LAW85QU6;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -906,34 +924,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/fxDemo/Framework/PaySDK",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"icucore\"",
-					"-l\"sqlite3\"",
-					"-framework",
-					"\"CoreLocation\"",
-					"-framework",
-					"\"CoreTelephony\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"JavaScriptCore\"",
-					"-framework",
-					"\"ReactiveObjC\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-					"-framework",
-					"\"WebKit\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = mingling.fxDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

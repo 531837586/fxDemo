@@ -53,6 +53,8 @@
 -(void)configData{
     
     self.dataArray = [NSMutableArray arrayWithObjects:
+                      @"KVOViewController",
+                      @"CategoryVC",
                       @"FXShadowVC",
                       @"UIStackViewController",
                       @"UICallerViewController",
@@ -88,7 +90,7 @@
 //        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 //    cell.grow = [NSString stringWithFormat:@"indexPath_%ld", indexPath.row];
-    NSString *value = [NSString stringWithFormat:@"%ld", indexPath.row];
+//    NSString *value = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
 //    [Growing setPeopleVariable:@{@"indexPath":value}];
     cell.imageView.image = [UIImage imageNamed:@"white_image"];
 //        cell.imageView.image = [UIImage imageNamed:@"black_boll"];

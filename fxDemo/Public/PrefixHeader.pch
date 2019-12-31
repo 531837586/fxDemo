@@ -17,7 +17,7 @@
 #import "UIView+onClick.h"
 #import <objc/runtime.h>
 #import "math.h"
-#import <ReactiveObjC-umbrella.h>
+//#import <ReactiveObjC-umbrella.h>
 #import "UIView+Frame.h"
 //#import "CC_Share.h"
 
