@@ -54,30 +54,51 @@ static NSString *const FXKVOAssiociateKey = @"FXKVO_AssiociateKey";
             objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey), infoArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
         [infoArray addObject:info];
+    
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        Method m1 = class_getInstanceMethod([self class], NSSelectorFromString(@"dealloc"));
+//        Method m2 = class_getInstanceMethod([self class], @selector(fx_dealloc));
+//        method_exchangeImplementations(m1, m2);
+//    });
 }
 
-- (void)fx_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    
-}
+//- (void)fx_observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    
+//}
 
-- (void)fx_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath{
-    
-    NSMutableArray *infoArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey));
-    [infoArray enumerateObjectsUsingBlock:^(FXKVOInfo *info, NSUInteger idx, BOOL * _Nonnull stop) {
-        if([info.keyPath isEqualToString:keyPath]
-           &&(observer == info.observer)) {
-            [infoArray removeObject:info];
-            *stop = YES;
-        }
-    }];
-    //如果关联数组没有KVO信息->清空
-    if(infoArray.count == 0){
-        objc_removeAssociatedObjects(infoArray);
-    }
-    //指回父类
-    Class superClass = [self class];//KVOStudent
-    object_setClass(self, superClass);
-}
+//- (void)fx_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath{
+//    
+//    NSMutableArray *infoArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey));
+//    [infoArray enumerateObjectsUsingBlock:^(FXKVOInfo *info, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if([info.keyPath isEqualToString:keyPath]
+//           &&(observer == info.observer)) {
+//            [infoArray removeObject:info];
+//            *stop = YES;
+//        }
+//    }];
+//    //如果关联数组没有KVO信息->清空
+//    if(infoArray.count == 0){
+//        objc_removeAssociatedObjects(infoArray);
+//    }
+//    //指回父类
+//    Class superClass = [self class];//KVOStudent
+//    object_setClass(self, superClass);
+//}
+
+//- (void)fx_dealloc {
+//
+//    [self fx_dealloc];
+//
+//    Class superClass = [self class];//KVOStudent
+//    object_setClass(self, superClass);
+//}
+
+//- (void)dealloc{
+//    //指回父类
+//    Class superClass = [self class];//KVOStudent
+//    object_setClass(self, superClass);
+//}
 
 #pragma mark - 动态生成子类
 - (Class)creatChildClass:(NSString *)keyPath{
@@ -109,7 +130,18 @@ static NSString *const FXKVOAssiociateKey = @"FXKVO_AssiociateKey";
     const char *settertype = method_getTypeEncoding(setterM);
     class_addMethod(newClass, setterSEL, (IMP)fx_setter, settertype);
     
+    // 添加dealloc -- 为什么系统给KVO添加dealloc
+    SEL deallocSEL = NSSelectorFromString(@"dealloc");
+    Method deallocM = class_getInstanceMethod([self class], deallocSEL);
+    const char *deallocType = method_getTypeEncoding(deallocM);
+    class_addMethod(newClass, setterSEL, (IMP)fx_dealloc, deallocType);
+    
     return newClass;
+}
+
+static void fx_dealloc(id self, SEL _cmd, id newValue){
+    Class superClass = [self class];//KVOStudent
+    object_setClass(self, superClass);
 }
 
 #pragma mark - 函数部分

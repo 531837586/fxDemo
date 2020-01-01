@@ -70,7 +70,8 @@
 
 - (void)dealloc {
     
-    [self.student fx_removeObserver:self forKeyPath:@"name"];
+//    [self.student fx_removeObserver:self forKeyPath:@"name"];
+    NSLog(@"VC 移除之后");
 }
 
 #pragma mark - 遍历方法-ivar-property

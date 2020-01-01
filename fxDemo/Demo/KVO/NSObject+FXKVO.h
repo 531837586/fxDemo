@@ -17,12 +17,12 @@
                options:(FXKeyValueObservingOptions)options
                context:(nullable void *)context handBlock:(FXKVOBlock _Nullable )handBlock;
 
-- (void)fx_observeValueForKeyPath:(NSString *_Nullable)keyPath
-                         ofObject:(id _Nullable )object
-                           change:(NSDictionary<NSKeyValueChangeKey,id> *_Nullable)change
-                          context:(void *_Nullable)context;
+//- (void)fx_observeValueForKeyPath:(NSString *_Nullable)keyPath
+//                         ofObject:(id _Nullable )object
+//                           change:(NSDictionary<NSKeyValueChangeKey,id> *_Nullable)change
+//                          context:(void *_Nullable)context;
 
-- (void)fx_removeObserver:(NSObject *_Nullable)observer forKeyPath:(NSString *_Nullable)keyPath;
+//- (void)fx_removeObserver:(NSObject *_Nullable)observer forKeyPath:(NSString *_Nullable)keyPath;
 @end
 
 

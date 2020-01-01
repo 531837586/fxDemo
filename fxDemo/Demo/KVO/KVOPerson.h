@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
- 
-
 @interface KVOPerson : NSObject
 -(void)walk;
 @end
