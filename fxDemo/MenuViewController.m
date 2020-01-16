@@ -53,6 +53,9 @@
 -(void)configData{
     
     self.dataArray = [NSMutableArray arrayWithObjects:
+                      @"GCDViewController",
+                      @"ThreadVC",
+                      @"RunloopVC",
                       @"KVOViewController",
                       @"CategoryVC",
                       @"FXShadowVC",
@@ -68,7 +71,6 @@
                       @"DictionaryVC",
                       @"AnimationImageVC",
                       @"GetChannelVC",
-                      @"GCDViewController",
                       @"KVCViewController",
                       nil];
     

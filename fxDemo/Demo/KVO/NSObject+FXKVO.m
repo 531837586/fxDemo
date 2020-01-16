@@ -37,24 +37,30 @@ static NSString *const FXKVOAssiociateKey = @"FXKVO_AssiociateKey";
 
 - (void)fx_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(FXKeyValueObservingOptions)options context:(nullable void *)context handBlock:(FXKVOBlock)handBlock{
     //1. 验证set方法
-        [self judgeSetterMethodFromKeyPath:keyPath];
-        //2. 动态生成子类
-        Class newClass = [self creatChildClass:keyPath];
-        //3. 当前对象的类，isa指向newClass
-        object_setClass(self, newClass);
-        //4. 保存KVO信息
-        //集合 --> add map
-        FXKVOInfo *info = [[FXKVOInfo alloc] initWithObserver:observer forKeyPath:keyPath options:options handBlock:handBlock];
-        NSMutableArray *infoArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey));
-        if(!infoArray) {
-          //数组 -> 成员 强引用
-            //self(vc) -> person ISA -> 数组 -> info -/weak/-> self(VC) ?
-            //self.person -> FXKVO -> //内存问题，这里为什么没有形成循环引用？
-            infoArray = [NSMutableArray arrayWithCapacity:1];
-            objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey), infoArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self judgeSetterMethodFromKeyPath:keyPath];
+    //2. 动态生成子类
+    Class newClass = [self creatChildClass:keyPath];
+    //3. 当前对象的类，isa指向newClass
+    object_setClass(self, newClass);
+    //4. 保存KVO信息
+    //集合 --> add map
+    FXKVOInfo *info = [[FXKVOInfo alloc] initWithObserver:observer forKeyPath:keyPath options:options handBlock:handBlock];
+    NSMutableArray *infoArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey));
+    if(!infoArray) {
+      //数组 -> 成员 强引用
+        //self(vc) -> person ISA -> 数组 -> info -/weak/-> self(VC) ?
+        //self.person -> FXKVO -> //内存问题，这里为什么没有形成循环引用？
+        infoArray = [NSMutableArray arrayWithCapacity:1];
+        objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey), infoArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+         
+    
+    for (FXKVOInfo *info1 in infoArray) {
+        if (info1.observer == observer && [info1.keyPath isEqualToString:keyPath]) {
+            break;
         }
         [infoArray addObject:info];
-    
+    }
 //    static dispatch_once_t onceToken;
 //    dispatch_once(&onceToken, ^{
 //        Method m1 = class_getInstanceMethod([self class], NSSelectorFromString(@"dealloc"));
@@ -67,24 +73,33 @@ static NSString *const FXKVOAssiociateKey = @"FXKVO_AssiociateKey";
 //    
 //}
 
-//- (void)fx_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath{
-//    
-//    NSMutableArray *infoArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey));
-//    [infoArray enumerateObjectsUsingBlock:^(FXKVOInfo *info, NSUInteger idx, BOOL * _Nonnull stop) {
-//        if([info.keyPath isEqualToString:keyPath]
-//           &&(observer == info.observer)) {
-//            [infoArray removeObject:info];
-//            *stop = YES;
-//        }
-//    }];
-//    //如果关联数组没有KVO信息->清空
-//    if(infoArray.count == 0){
-//        objc_removeAssociatedObjects(infoArray);
-//    }
-//    //指回父类
-//    Class superClass = [self class];//KVOStudent
-//    object_setClass(self, superClass);
-//}
+- (void)fx_removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath{
+    
+    NSMutableArray *infoArray = objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(FXKVOAssiociateKey));
+    [infoArray enumerateObjectsUsingBlock:^(FXKVOInfo *info, NSUInteger idx, BOOL * _Nonnull stop) {
+        if([info.keyPath isEqualToString:keyPath]
+           &&(observer == info.observer)) {
+            [infoArray removeObject:info];
+            *stop = YES;
+        }
+    }];
+
+    
+    for (FXKVOInfo *info in infoArray) {
+        if(!info.observer) {
+             [infoArray removeObject:info];
+            break;
+        }
+    }
+    
+    //如果关联数组没有KVO信息->清空
+    if(infoArray.count == 0){
+        objc_removeAssociatedObjects(infoArray);
+    }
+    //指回父类
+    Class superClass = [self class];//KVOStudent
+    object_setClass(self, superClass);
+}
 
 //- (void)fx_dealloc {
 //

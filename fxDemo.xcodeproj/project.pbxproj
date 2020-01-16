@@ -56,7 +56,15 @@
 		A199E22522A1157F00BB7B81 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E22422A1157F00BB7B81 /* BaseView.m */; };
 		A199E22822A11C0900BB7B81 /* QueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E22722A11C0900BB7B81 /* QueueViewController.m */; };
 		A19B9CC6235E960A005FDEE6 /* GetChannelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A19B9CC5235E960A005FDEE6 /* GetChannelVC.m */; };
+		A19D0D7623BC926C0031A4B1 /* RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D0D7523BC926C0031A4B1 /* RuntimeVC.m */; };
+		A19D0D7923BC9FDB0031A4B1 /* RuntimePerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D0D7823BC9FDB0031A4B1 /* RuntimePerson.m */; };
+		A19D0D7C23BCDA360031A4B1 /* RuntimeStudent.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D0D7B23BCDA360031A4B1 /* RuntimeStudent.m */; };
+		A19D0D7F23BEE94A0031A4B1 /* RuntimeDog.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D0D7E23BEE94A0031A4B1 /* RuntimeDog.m */; };
+		A19D0D8323C5F6570031A4B1 /* FXThread.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D0D8223C5F6570031A4B1 /* FXThread.m */; };
+		A19D0D8623C5F68D0031A4B1 /* RunloopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A19D0D8523C5F68D0031A4B1 /* RunloopVC.m */; };
 		A19FC54E2394A8B10023CFF7 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FC54D2394A8B10023CFF7 /* GCDViewController.m */; };
+		A1C0C46A23CD525900E17A8C /* ThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C0C46923CD525900E17A8C /* ThreadVC.m */; };
+		A1C0C46E23CD5B7800E17A8C /* ThreadPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C0C46D23CD5B7800E17A8C /* ThreadPerson.m */; };
 		A1E82493225DDB0E0008608B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E82492225DDB0E0008608B /* Launch Screen.storyboard */; };
 		A1E9603C223251C30044DA6F /* FXReadLocalFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9603B223251C30044DA6F /* FXReadLocalFile.m */; };
 		A1E96040223254CF0044DA6F /* attributeString.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1E9603F223254CF0044DA6F /* attributeString.plist */; };
@@ -198,8 +206,24 @@
 		A199E22722A11C0900BB7B81 /* QueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueViewController.m; sourceTree = "<group>"; };
 		A19B9CC4235E960A005FDEE6 /* GetChannelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetChannelVC.h; sourceTree = "<group>"; };
 		A19B9CC5235E960A005FDEE6 /* GetChannelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetChannelVC.m; sourceTree = "<group>"; };
-		A19FC54C2394A8B10023CFF7 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
-		A19FC54D2394A8B10023CFF7 /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		A19D0D7423BC926C0031A4B1 /* RuntimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeVC.h; sourceTree = "<group>"; };
+		A19D0D7523BC926C0031A4B1 /* RuntimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeVC.m; sourceTree = "<group>"; };
+		A19D0D7723BC9FDB0031A4B1 /* RuntimePerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimePerson.h; sourceTree = "<group>"; };
+		A19D0D7823BC9FDB0031A4B1 /* RuntimePerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimePerson.m; sourceTree = "<group>"; };
+		A19D0D7A23BCDA360031A4B1 /* RuntimeStudent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeStudent.h; sourceTree = "<group>"; };
+		A19D0D7B23BCDA360031A4B1 /* RuntimeStudent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeStudent.m; sourceTree = "<group>"; };
+		A19D0D7D23BEE94A0031A4B1 /* RuntimeDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeDog.h; sourceTree = "<group>"; };
+		A19D0D7E23BEE94A0031A4B1 /* RuntimeDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeDog.m; sourceTree = "<group>"; };
+		A19D0D8123C5F6570031A4B1 /* FXThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXThread.h; sourceTree = "<group>"; };
+		A19D0D8223C5F6570031A4B1 /* FXThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXThread.m; sourceTree = "<group>"; };
+		A19D0D8423C5F68D0031A4B1 /* RunloopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunloopVC.h; sourceTree = "<group>"; };
+		A19D0D8523C5F68D0031A4B1 /* RunloopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunloopVC.m; sourceTree = "<group>"; };
+		A19FC54C2394A8B10023CFF7 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GCDViewController.h; path = ../GCDViewController.h; sourceTree = "<group>"; };
+		A19FC54D2394A8B10023CFF7 /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GCDViewController.m; path = ../GCDViewController.m; sourceTree = "<group>"; };
+		A1C0C46823CD525900E17A8C /* ThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadVC.h; sourceTree = "<group>"; };
+		A1C0C46923CD525900E17A8C /* ThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadVC.m; sourceTree = "<group>"; };
+		A1C0C46C23CD5B7800E17A8C /* ThreadPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadPerson.h; sourceTree = "<group>"; };
+		A1C0C46D23CD5B7800E17A8C /* ThreadPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadPerson.m; sourceTree = "<group>"; };
 		A1E82492225DDB0E0008608B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A1E9603A223251C30044DA6F /* FXReadLocalFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXReadLocalFile.h; sourceTree = "<group>"; };
 		A1E9603B223251C30044DA6F /* FXReadLocalFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXReadLocalFile.m; sourceTree = "<group>"; };
@@ -317,7 +341,6 @@
 				A1E9603B223251C30044DA6F /* FXReadLocalFile.m */,
 				A1E9603F223254CF0044DA6F /* attributeString.plist */,
 				A1E82492225DDB0E0008608B /* Launch Screen.storyboard */,
-				A139195B222F5EF1003955AC /* main.m */,
 			);
 			path = fxDemo;
 			sourceTree = "<group>";
@@ -365,6 +388,9 @@
 		A13E51EF2264577A00936CE0 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A1C0C46723CD522D00E17A8C /* 多线程 */,
+				A19D0D8023BF3C140031A4B1 /* Runloop */,
+				A19D0D7323BC923E0031A4B1 /* Runtime */,
 				A1674DA023A9B8C70040FD11 /* KVO */,
 				A1674D8E23A627400040FD11 /* Category(分类) */,
 				A1674D8D23A5CEFA0040FD11 /* YYModel */,
@@ -391,8 +417,6 @@
 				A13DA30E23224E7A00202AE7 /* KKGameSDKTopMoveImage.m */,
 				A19B9CC4235E960A005FDEE6 /* GetChannelVC.h */,
 				A19B9CC5235E960A005FDEE6 /* GetChannelVC.m */,
-				A19FC54C2394A8B10023CFF7 /* GCDViewController.h */,
-				A19FC54D2394A8B10023CFF7 /* GCDViewController.m */,
 				A1674D9523A6285B0040FD11 /* CategoryVC.h */,
 				A1674D9623A6285B0040FD11 /* CategoryVC.m */,
 				A11D198622B779FD00DD171F /* MVVM */,
@@ -492,6 +516,46 @@
 				A199E22122A1156200BB7B81 /* LogView.m */,
 			);
 			path = NSLogView;
+			sourceTree = "<group>";
+		};
+		A19D0D7323BC923E0031A4B1 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				A19D0D7423BC926C0031A4B1 /* RuntimeVC.h */,
+				A19D0D7523BC926C0031A4B1 /* RuntimeVC.m */,
+				A139195B222F5EF1003955AC /* main.m */,
+				A19D0D7A23BCDA360031A4B1 /* RuntimeStudent.h */,
+				A19D0D7B23BCDA360031A4B1 /* RuntimeStudent.m */,
+				A19D0D7723BC9FDB0031A4B1 /* RuntimePerson.h */,
+				A19D0D7823BC9FDB0031A4B1 /* RuntimePerson.m */,
+				A19D0D7D23BEE94A0031A4B1 /* RuntimeDog.h */,
+				A19D0D7E23BEE94A0031A4B1 /* RuntimeDog.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		A19D0D8023BF3C140031A4B1 /* Runloop */ = {
+			isa = PBXGroup;
+			children = (
+				A19D0D8123C5F6570031A4B1 /* FXThread.h */,
+				A19D0D8223C5F6570031A4B1 /* FXThread.m */,
+				A19D0D8423C5F68D0031A4B1 /* RunloopVC.h */,
+				A19D0D8523C5F68D0031A4B1 /* RunloopVC.m */,
+			);
+			path = Runloop;
+			sourceTree = "<group>";
+		};
+		A1C0C46723CD522D00E17A8C /* 多线程 */ = {
+			isa = PBXGroup;
+			children = (
+				A1C0C46823CD525900E17A8C /* ThreadVC.h */,
+				A1C0C46923CD525900E17A8C /* ThreadVC.m */,
+				A1C0C46C23CD5B7800E17A8C /* ThreadPerson.h */,
+				A1C0C46D23CD5B7800E17A8C /* ThreadPerson.m */,
+				A19FC54C2394A8B10023CFF7 /* GCDViewController.h */,
+				A19FC54D2394A8B10023CFF7 /* GCDViewController.m */,
+			);
+			path = "多线程";
 			sourceTree = "<group>";
 		};
 		A1C53450228458CE00993CB9 /* Framework */ = {
@@ -691,10 +755,12 @@
 				A130BF0A22B9CF0500D53046 /* RACLoginViewController.m in Sources */,
 				A199E216229FE8B100BB7B81 /* ImageViewController.m in Sources */,
 				A1391951222F5EF0003955AC /* MenuViewController.m in Sources */,
+				A1C0C46E23CD5B7800E17A8C /* ThreadPerson.m in Sources */,
 				A13E51E72264553000936CE0 /* BaseViewController.m in Sources */,
 				A13E52A22265DC2500936CE0 /* UIViewController+FXUI.m in Sources */,
 				A1674D8C23A355E30040FD11 /* NSObject+FXKVC.m in Sources */,
 				A19FC54E2394A8B10023CFF7 /* GCDViewController.m in Sources */,
+				A19D0D8623C5F68D0031A4B1 /* RunloopVC.m in Sources */,
 				A1674D9123A6276B0040FD11 /* FXPerson.m in Sources */,
 				A13E529E2265C1F500936CE0 /* UICallerViewController.m in Sources */,
 				A1674D8523A075150040FD11 /* KVCViewController.m in Sources */,
@@ -702,6 +768,7 @@
 				A191970923B5999E009B7CFA /* FXKVOInfo.m in Sources */,
 				A1674DAC23ADC2470040FD11 /* NSObject+FXKVO.m in Sources */,
 				A1E9603C223251C30044DA6F /* FXReadLocalFile.m in Sources */,
+				A1C0C46A23CD525900E17A8C /* ThreadVC.m in Sources */,
 				A13E51ED226455B500936CE0 /* RootNavigationController.m in Sources */,
 				A199E21E22A10EEB00BB7B81 /* UIView+onClick.m in Sources */,
 				A130BF0622B99C2A00D53046 /* RACViewController.m in Sources */,
@@ -716,13 +783,18 @@
 				A199E22222A1156200BB7B81 /* LogView.m in Sources */,
 				A13E51FB22645DF400936CE0 /* FXUtils.m in Sources */,
 				A1692556229BC86D00B88365 /* StackViewController.m in Sources */,
+				A19D0D7923BC9FDB0031A4B1 /* RuntimePerson.m in Sources */,
+				A19D0D8323C5F6570031A4B1 /* FXThread.m in Sources */,
 				A1674DA323A9B8ED0040FD11 /* KVOViewController.m in Sources */,
 				A13E51EA2264555200936CE0 /* BaseNavigationController.m in Sources */,
 				A147876C225F408800ECB147 /* UINavigationController+EventNavController.m in Sources */,
+				A19D0D7F23BEE94A0031A4B1 /* RuntimeDog.m in Sources */,
 				A199E22522A1157F00BB7B81 /* BaseView.m in Sources */,
 				A18EEC2A22C09E20008D6483 /* AESEncrypViewController.m in Sources */,
 				A19B9CC6235E960A005FDEE6 /* GetChannelVC.m in Sources */,
+				A19D0D7C23BCDA360031A4B1 /* RuntimeStudent.m in Sources */,
 				A18EEC3122C09F98008D6483 /* GTMBase64.m in Sources */,
+				A19D0D7623BC926C0031A4B1 /* RuntimeVC.m in Sources */,
 				A16BF15D22F14A2C000BF496 /* DisfileViewController.m in Sources */,
 				A139194E222F5EF0003955AC /* AppDelegate.m in Sources */,
 				A13E51E4226078C500936CE0 /* KKEventPointMgr.m in Sources */,

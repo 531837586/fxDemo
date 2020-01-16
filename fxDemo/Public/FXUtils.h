@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FXUtils : NSObject
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (NSString *)getPlaceStr;
 @end
 
 NS_ASSUME_NONNULL_END
