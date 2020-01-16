@@ -7,6 +7,7 @@
 //
 
 #import "GCDViewController.h"
+#import "KC_ImageTool.h"
 
 @interface GCDViewController ()
 @property (nonatomic, strong) NSString *token;
@@ -14,6 +15,13 @@
 @property (nonatomic, strong) id listData;
 @property (nonatomic, strong) NSMutableArray *mArray;
 @property (nonatomic, strong) UIImageView *imageView;
+
+@property (nonatomic, strong) dispatch_source_t source;
+@property (nonatomic, strong) dispatch_queue_t queue;
+@property (nonatomic, assign) NSUInteger totalComplete;
+
+@property (strong, nonatomic)   UIProgressView *progressView;
+@property (nonatomic) BOOL isRunning;
 @end
 
 @implementation GCDViewController
@@ -34,10 +42,15 @@
 //    [self testDemo];
 //    [self testDemo2];
 //    [self testDemo3];
-    [self testDemo4];
+//    [self testDemo4];
 //    [self testDemo5];
 //    [self testDemo6];
 //    [self testDemo7];
+//    [self testDemo8];
+//    [self testDemo9];
+//    [self testDemo10];
+//    [self testDemo11];
+    [self testDemo12];
 }
 
 - (void)syncTest{
@@ -74,6 +87,162 @@
 //    1，5，2，4，3
 }
 
+#pragma mark - dispatch_source
+- (void)testDemo12{
+    
+   
+    
+    self.totalComplete = 0;
+    self.queue = dispatch_queue_create("com.fanxing.cn", 0);
+    
+    // source -- runloop source
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//    });
+    /**
+        第一个参数：dispatch_source_type_t type为设置GCD源方法的类型，前面已经列举过了。
+        第二个参数：uintptr_t handle Apple的API介绍说，暂时没有使用，传0即可。
+        第三个参数：unsigned long mask Apple的API介绍说，使用DISPATCH_TIMER_STRICT，会引起电量消耗加剧，毕竟要求精确时间，所以一般传0即可，视业务情况而定。
+        第四个参数：dispatch_queue_t _Nullable queue 队列，将定时器事件处理的Block提交到哪个队列之上。可以传Null，默认为全局队列。
+        注意：当提交到全局队列的时候，时间处理的回调内，需要异步获取UI线程，更新UI...不过这好像是常识，又啰嗦了...
+        */
+    //1. 封装计时器时比较准确
+    //2. 操作麻烦，如果设置了回调信息，一定要dispatch_resume，默认是挂起的。
+    //3.应用： 参考LGGXDTimer类，可以封装一些计时器要比 timer 准确灵活，独立，不受runloop影响。也可以做响应回调参考
+    self.source = dispatch_source_create(DISPATCH_SOURCE_TYPE_DATA_ADD, 0, 0, dispatch_get_main_queue());
+    
+    //保存代码块 ---> 异步dispatch_source_set_event_handle()
+    //设置取消回调 dispatch_source_set_cancel_handler(dispatch_source_t source,dispatch_block_t _Nullable handler)
+    //封装我们需要回调的触发函数 -- 响应
+    dispatch_source_set_event_handler(self.source, ^{
+       NSUInteger value = dispatch_source_get_data(self.source); // 取回来值 1 响应式
+        self.totalComplete += value;
+        NSLog(@"进度：%.2f", self.totalComplete/100.0);
+        self.progressView.progress = self.totalComplete/100.0;
+    });
+    self.isRunning = YES;
+    dispatch_resume(self.source);
+    
+
+    
+//    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
+//    [btn setBackgroundImage:[UIImage imageNamed:@"kk_game_login_top_V_background2"] forState:UIControlStateNormal];
+//    [self.view addSubview:btn];
+//    [btn addTarget:self action:@selector(didClickStartOrPauseAction:) forControlEvents:UIControlEventTouchUpInside];
+   
+    UILabel *btn = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
+    [btn setBackgroundColor:[UIColor orangeColor]];
+    [self.view addSubview:btn];
+    btn.text = @"暂停/恢复";
+    [btn onClick:^(id obj) {
+            if (self.isRunning) {// 正在跑就暂停
+                dispatch_suspend(self.source);
+                dispatch_suspend(self.queue);// mainqueue 挂起
+                self.isRunning = NO;
+//                [sender setTitle:@"暂停中..." forState:UIControlStateNormal];
+                btn.text = @"暂停中...";
+            }else{
+                dispatch_resume(self.source);
+                dispatch_resume(self.queue);
+                self.isRunning = YES;
+//                [sender setTitle:@"加载中..." forState:UIControlStateNormal];
+                btn.text = @"加载中...";
+            }
+    }];
+    
+    UILabel *btn1 = [[UILabel alloc] initWithFrame:CGRectMake(200, 100, 100, 50)];
+    [btn1 setBackgroundColor:[UIColor redColor]];
+    btn1.text = @"点击开始下载";
+    [self.view addSubview:btn1];
+    [btn1 onClick:^(id obj) {
+        NSLog(@"点击开始加载");
+        for (NSUInteger index = 0; index < 100; index++) {
+               dispatch_async(self.queue, ^{
+                   if (!self.isRunning) {
+                       NSLog(@"暂停下载");
+                       return ;
+                   }
+                   sleep(1);
+
+                   dispatch_source_merge_data(self.source, 1); // source 值响应
+               });
+           }
+    }];
+      
+  self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(100, 200, 100, 10)];
+  self.progressView.backgroundColor = [UIColor grayColor];
+  self.progressView.tintColor = [UIColor blueColor];
+  [self.view addSubview:self.progressView];
+}
+
+//- (void)didClickStartOrPauseAction:(id)sender {
+//
+//    if (self.isRunning) {// 正在跑就暂停
+//        dispatch_suspend(self.source);
+//        dispatch_suspend(self.queue);// mainqueue 挂起
+//        self.isRunning = NO;
+//        [sender setTitle:@"暂停中..." forState:UIControlStateNormal];
+//    }else{
+//        dispatch_resume(self.source);
+//        dispatch_resume(self.queue);
+//        self.isRunning = YES;
+//        [sender setTitle:@"加载中..." forState:UIControlStateNormal];
+//    }
+//}
+
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+//    NSLog(@"点击开始加载");
+//
+//    for (NSUInteger index = 0; index < 100; index++) {
+//        dispatch_async(self.queue, ^{
+//            if (!self.isRunning) {
+//                NSLog(@"暂停下载");
+//                return ;
+//            }
+//            sleep(1);
+//
+//            dispatch_source_merge_data(self.source, 1); // source 值响应
+//        });
+//    }
+//}
+
+#pragma mark -//信号量
+- (void)testDemo11{
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    //信号量 -- gcd控制并发数
+    //控制数量为1，可以当锁用，实现同步效果，一次只允许通过一个
+    //总结：由于设定的信号值为3
+    dispatch_semaphore_t semphore = dispatch_semaphore_create(2);
+    
+    //任务1
+    dispatch_async(queue, ^{
+        dispatch_semaphore_wait(semphore, DISPATCH_TIME_FOREVER);
+        NSLog(@"执行任务1");
+        sleep(1);
+        NSLog(@"任务1执行完成");
+        dispatch_semaphore_signal(semphore);
+    });
+    
+    //任务2
+    dispatch_async(queue, ^{
+        dispatch_semaphore_wait(semphore, DISPATCH_TIME_FOREVER);
+        NSLog(@"执行任务2");
+        sleep(1);
+        NSLog(@"任务2执行完成");
+        dispatch_semaphore_signal(semphore);
+    });
+    
+    //任务3
+    dispatch_async(queue, ^{
+        dispatch_semaphore_wait(semphore, DISPATCH_TIME_FOREVER);
+        NSLog(@"执行任务3");
+        sleep(1);
+        NSLog(@"任务3执行完成");
+        dispatch_semaphore_signal(semphore);
+    });
+}
+
 - (void)testDemo7{
     
     dispatch_queue_t concurrentQueue = dispatch_queue_create("fanxing", DISPATCH_QUEUE_CONCURRENT);
@@ -98,7 +267,71 @@
     }
 }
 
+ 
 
+#pragma mark - 调度组
+- (void)testDemo10{
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_group_t group = dispatch_group_create();
+    
+    //进组之后，底层signal+1
+    //group会一直循环判断signal是否为0，如果为0，就会调用一个group的wakeup函数，就会隐性调用dispatch_group_notify这个通知。
+    //signal 不为0，就不会调用dispatch_group_notify，如果signal为负数，就会发生崩溃。
+    
+    dispatch_group_enter(group); //+1
+    dispatch_async(queue, ^{
+        NSLog(@"第一个走完了");
+        dispatch_group_leave(group); //-1
+    });
+    
+    dispatch_group_enter(group); //+1
+    dispatch_async(queue, ^{
+        NSLog(@"第二个走完了");
+        dispatch_group_leave(group); //-1
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"所有任务完成，可以更新UI");
+    });
+}
+
+- (void)testDemo9{
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [self.view addSubview:imageView];
+    
+    //创建调度组
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_queue_t queue1 = dispatch_queue_create("fanxing.com", DISPATCH_QUEUE_CONCURRENT);
+    
+    //SIGNAL
+    dispatch_group_async(group, queue, ^{
+          NSString *logoStr = @"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3351002169,4211425181&fm=27&gp=0.jpg";
+              NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:logoStr]];
+              UIImage *image = [UIImage imageWithData:data];
+              [self.mArray addObject:image];
+    });
+    
+    dispatch_group_async(group, queue1, ^{
+        NSString *logoStr = @"https://www.baidu.com/img/baidu_resultlogo@2.png";
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:logoStr]];
+        UIImage *image = [UIImage imageWithData:data];
+        [self.mArray addObject:image];
+    });
+    
+//    在全局并发队列进行请求，在主队列进行更新UI，对队列的影响和需求降低
+    __block UIImage *newImage = nil;
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"数组个数:%ld",self.mArray.count);
+        for (int i = 0; i<self.mArray.count; i++) {
+            UIImage *waterImage = self.mArray[i];
+            newImage = [KC_ImageTool kc_WaterImageWithWaterImage:waterImage backImage:newImage waterImageRect:CGRectMake(20, 100*(i+1), 100, 40)];
+        }
+        imageView.image = newImage;
+    });
+}
  
 
 #pragma mark - 栈栏函数：dispatch_barrier_sync/dispatch_barrier_async

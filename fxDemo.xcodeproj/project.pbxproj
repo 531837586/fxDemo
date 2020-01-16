@@ -50,6 +50,7 @@
 		A191970423B4DB82009B7CFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191970323B4DB82009B7CFA /* UIKit.framework */; };
 		A191970623B4DB8B009B7CFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A191970523B4DB8B009B7CFA /* Foundation.framework */; };
 		A191970923B5999E009B7CFA /* FXKVOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A191970823B5999E009B7CFA /* FXKVOInfo.m */; };
+		A19401CA23D07C8000D99685 /* LGGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A19401C923D07C8000D99685 /* LGGCDTimer.m */; };
 		A199E216229FE8B100BB7B81 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E215229FE8B100BB7B81 /* ImageViewController.m */; };
 		A199E21E22A10EEB00BB7B81 /* UIView+onClick.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E21C22A10EEB00BB7B81 /* UIView+onClick.m */; };
 		A199E22222A1156200BB7B81 /* LogView.m in Sources */ = {isa = PBXBuildFile; fileRef = A199E22122A1156200BB7B81 /* LogView.m */; };
@@ -65,6 +66,7 @@
 		A19FC54E2394A8B10023CFF7 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A19FC54D2394A8B10023CFF7 /* GCDViewController.m */; };
 		A1C0C46A23CD525900E17A8C /* ThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C0C46923CD525900E17A8C /* ThreadVC.m */; };
 		A1C0C46E23CD5B7800E17A8C /* ThreadPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C0C46D23CD5B7800E17A8C /* ThreadPerson.m */; };
+		A1C0C47423D062AA00E17A8C /* KC_ImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C0C47323D062AA00E17A8C /* KC_ImageTool.m */; };
 		A1E82493225DDB0E0008608B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1E82492225DDB0E0008608B /* Launch Screen.storyboard */; };
 		A1E9603C223251C30044DA6F /* FXReadLocalFile.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9603B223251C30044DA6F /* FXReadLocalFile.m */; };
 		A1E96040223254CF0044DA6F /* attributeString.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1E9603F223254CF0044DA6F /* attributeString.plist */; };
@@ -194,6 +196,8 @@
 		A191970523B4DB8B009B7CFA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A191970723B5999E009B7CFA /* FXKVOInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXKVOInfo.h; sourceTree = "<group>"; };
 		A191970823B5999E009B7CFA /* FXKVOInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXKVOInfo.m; sourceTree = "<group>"; };
+		A19401C823D07C8000D99685 /* LGGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGGCDTimer.h; sourceTree = "<group>"; };
+		A19401C923D07C8000D99685 /* LGGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGGCDTimer.m; sourceTree = "<group>"; };
 		A199E214229FE8B100BB7B81 /* ImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		A199E215229FE8B100BB7B81 /* ImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		A199E21C22A10EEB00BB7B81 /* UIView+onClick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+onClick.m"; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 		A1C0C46923CD525900E17A8C /* ThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadVC.m; sourceTree = "<group>"; };
 		A1C0C46C23CD5B7800E17A8C /* ThreadPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadPerson.h; sourceTree = "<group>"; };
 		A1C0C46D23CD5B7800E17A8C /* ThreadPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadPerson.m; sourceTree = "<group>"; };
+		A1C0C47223D062AA00E17A8C /* KC_ImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KC_ImageTool.h; sourceTree = "<group>"; };
+		A1C0C47323D062AA00E17A8C /* KC_ImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KC_ImageTool.m; sourceTree = "<group>"; };
 		A1E82492225DDB0E0008608B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A1E9603A223251C30044DA6F /* FXReadLocalFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FXReadLocalFile.h; sourceTree = "<group>"; };
 		A1E9603B223251C30044DA6F /* FXReadLocalFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FXReadLocalFile.m; sourceTree = "<group>"; };
@@ -554,6 +560,10 @@
 				A1C0C46D23CD5B7800E17A8C /* ThreadPerson.m */,
 				A19FC54C2394A8B10023CFF7 /* GCDViewController.h */,
 				A19FC54D2394A8B10023CFF7 /* GCDViewController.m */,
+				A19401C823D07C8000D99685 /* LGGCDTimer.h */,
+				A19401C923D07C8000D99685 /* LGGCDTimer.m */,
+				A1C0C47223D062AA00E17A8C /* KC_ImageTool.h */,
+				A1C0C47323D062AA00E17A8C /* KC_ImageTool.m */,
 			);
 			path = "多线程";
 			sourceTree = "<group>";
@@ -752,6 +762,7 @@
 				A13DA3122322510C00202AE7 /* UIView+Frame.m in Sources */,
 				A1674D8923A089E60040FD11 /* Person.m in Sources */,
 				A1674DA923A9CBA10040FD11 /* KVOStudent.m in Sources */,
+				A19401CA23D07C8000D99685 /* LGGCDTimer.m in Sources */,
 				A130BF0A22B9CF0500D53046 /* RACLoginViewController.m in Sources */,
 				A199E216229FE8B100BB7B81 /* ImageViewController.m in Sources */,
 				A1391951222F5EF0003955AC /* MenuViewController.m in Sources */,
@@ -775,6 +786,7 @@
 				A18EEC2D22C09E77008D6483 /* NSString+AES.m in Sources */,
 				A13E51F2226457C500936CE0 /* FXShadowVC.m in Sources */,
 				A139195C222F5EF1003955AC /* main.m in Sources */,
+				A1C0C47423D062AA00E17A8C /* KC_ImageTool.m in Sources */,
 				A13DA30F23224E7A00202AE7 /* KKGameSDKTopMoveImage.m in Sources */,
 				A1674D9723A6285B0040FD11 /* CategoryVC.m in Sources */,
 				A13DA3092322412E00202AE7 /* AnimationImageVC.m in Sources */,
