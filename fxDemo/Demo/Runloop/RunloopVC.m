@@ -254,7 +254,7 @@ void cancel(void *info, CFRunLoopRef rl, CFRunLoopMode mode){
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"%@", [NSThread currentThread]); // 3
         
-        NSString *str;
+//        NSString *str;
         dispatch_async(dispatch_get_main_queue(), ^{
             //1
             NSLog(@"%@", [NSThread currentThread]);

@@ -89,7 +89,7 @@
 + (void)forwardInvocation:(NSInvocation *)anInvocation{
     NSLog(@"%s",__func__);
     
-    NSString *sto = @"奔跑少年";
+//    NSString *sto = @"奔跑少年";
     anInvocation.target = [RuntimePerson class];
 //    [anInvocation setArgument:&sto atIndex:2];
     NSLog(@"%@",anInvocation.methodSignature);

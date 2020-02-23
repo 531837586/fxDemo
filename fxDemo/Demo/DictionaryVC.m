@@ -26,11 +26,11 @@
     textLabel.text = @"1234";
     [self.view addSubview:textLabel];
     
-    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+//    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     
     // 判断是否开启
     // 判断是否开启  限制广告跟踪选项（该选项在设置-隐私-广告-限制广告隐私）
-    Boolean on = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
+//    Boolean on = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
     
     [self test];
     [self test1];

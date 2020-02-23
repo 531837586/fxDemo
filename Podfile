@@ -4,6 +4,9 @@ use_frameworks!
 #inhibit_all_warnings!
 
 target 'fxDemo' do
+  pod 'WebViewJavascriptBridge', '~> 6.0.3'
+  pod 'AFNetworking'
+  pod 'CocoaAsyncSocket'
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # pod 'YYKit'
 #  pod 'GrowingAutoTrackKit'
@@ -12,6 +15,7 @@ target 'fxDemo' do
 #  pod 'UITemplateKit', :svn => 'https://huored.gicp.net:8088/svn/bench_ios/trunk/UITemplate/UITemplateKit'
 #  pod 'bench_ios', :svn => 'https://huored.gicp.net:8088/svn/bench_ios/trunk/bench_ios_net/tags/v1.3.94’
   # Pods for fxDemo
+  
 end
 #
 #  target 'fxDemoTests' do

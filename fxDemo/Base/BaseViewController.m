@@ -8,11 +8,31 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
-
+@interface BaseViewController ()<UITableViewDelegate, UITableViewDataSource>
+ 
 @end
 
 @implementation BaseViewController
+
+-(NSMutableArray *)menuDataArray{
+    if(!_menuDataArray){
+        _menuDataArray = [NSMutableArray array];
+    }
+    return _menuDataArray;
+}
+
+-(UITableView *)menuTableView{
+    if(!_menuTableView){
+        _menuTableView = [UITableView new];
+        _menuTableView.delegate = self;
+        _menuTableView.dataSource = self;
+        _menuTableView.frame = self.view.frame;
+//        _menuTableView.separatorInset = UIEdgeInsetsZero;
+        _menuTableView.separatorColor = RGB(237, 237, 237);
+        _menuTableView.tableFooterView = [UIView new];
+    }
+    return _menuTableView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,7 +40,14 @@
     
     [self configDefaultUI];
     [self addObserver];
+    
+    if([self respondsToSelector:@selector(configData)]){
+        [self configData];
+        [self.view addSubview:self.menuTableView];
+    }
 }
+
+-(void)configData{}
 
 -(void)configDefaultUI{
     
@@ -104,5 +131,33 @@
 //    [self.view setNeedsLayout];
 }
 
+#pragma mark - menuTableView delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.menuDataArray.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+     static NSString * cellID=@"cellID";
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+     if(!cell){
+         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+     }
+     cell.imageView.image = [UIImage imageNamed:@"white_image"];
+     cell.textLabel.text = self.menuDataArray[indexPath.row];
+     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
  
+     if(indexPath.row < self.menuDataArray.count){
+         NSString *name = [self.menuDataArray objectAtIndex:indexPath.row];
+         Class class = NSClassFromString(name);
+         BaseViewController *vc = [[class alloc] init];
+         [self.navigationController pushViewController:vc animated:YES];
+     }
+}
 @end

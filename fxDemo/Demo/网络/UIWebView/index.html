@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title>OC与JS交互</title>
+            <script>
+                function showAlert(message){
+<!--                    return "js返回值"-->
+<!--                    下面是闭包-->
+                        return function handle(block){
+                            alert('这个是JS的弹窗 \n' + message + '\n'+ block);
+                            return message + '+JS弹窗之后返回给OC的值+' + block;
+                        }
+                }
+            
+                function submit(){
+                    alert('summit方法调用弹窗');
+                }
+            </script>
+    </head>
+    <body>
+        
+        <a href="tzedu:///getSum/hello word/js">点击跳转效应OC方法</a>
+        <form id="myform" action="tzedu://www.baidu.com" method="get">
+            <input id="submit" type="submit" value="我是提交">
+        </form>
+        <input type="button" value="弹框" onclick="showAlert('hello JS')"><br/>
+        
+        <script>
+            var sbmt = document.getElementById('sbmt');
+            sbmt.onclick = function(event) {
+                window.location.href = "tzedu:///getSum:/hello word/js";
+                alert('1234');
+            };
+        </script>
+    </body>
+</html>

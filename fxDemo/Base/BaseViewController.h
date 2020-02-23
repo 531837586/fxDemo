@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseViewController : UIViewController
-
+@property (nonatomic, strong) UITableView *menuTableView;
+@property (nonatomic, strong) NSMutableArray *menuDataArray;
+-(void)configData;
 @end
 
 NS_ASSUME_NONNULL_END

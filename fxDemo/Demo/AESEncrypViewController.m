@@ -23,7 +23,7 @@
     
     NSString *aesStr = [phone aci_encryptWithAES];
     
-    NSString *resultStr = [aesStr aci_decryptWithAES];
+//    NSString *resultStr = [aesStr aci_decryptWithAES];
 }
 
 @end

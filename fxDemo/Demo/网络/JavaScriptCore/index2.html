@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OC与JS交互</title>
+    <script>
+        
+        function showAlert(){
+            alert("hello");
+            showMessage("点击了弹框按钮...",arr);
+        }
+    
+        function ocCalljs(dict,str){
+            var name = dict['name'];
+            var age  = dict['age'];
+            alert(name + age + str);
+            // 传回去
+            showDict(dict)
+        }
+    
+        function openAlbumImage(){
+            getImage();
+            kcObject.letShowImage('123');
+            alert(kcObject.getSum(10,20));
+        }
+
+        function showImage(imageDataStr){
+            var tz_img = document.getElementById("tz_image");
+            tz_img.innerHTML = "<image style='width:200px;' src='data:image/png;base64,"+imageDataStr+"'>";
+        }
+    
+    </script>
+</head>
+<body>
+
+    <input type="button" value="提交" onclick="showAlert()" /> <br />
+    <input type="button" value="打开相册" onclick="openAlbumImage()" /><br />
+
+    <div id="tz_image"></div>
+
+</body>
+</html>
